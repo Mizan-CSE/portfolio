@@ -1,5 +1,5 @@
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-import { forwardRef, MouseEvent, ReactNode } from "react";
+import { AnchorHTMLAttributes, forwardRef, MouseEvent, ReactNode } from "react";
 
 type Props = {
   href?: string;
@@ -7,7 +7,7 @@ type Props = {
   className?: string;
   children: ReactNode;
   strength?: number;
-  onClick?: () => void;
+  onClick?: AnchorHTMLAttributes<HTMLAnchorElement>["onClick"];
   ariaLabel?: string;
 };
 
@@ -27,6 +27,7 @@ export const MagneticButton = forwardRef<HTMLAnchorElement, Props>(
       x.set(px);
       y.set(py);
     };
+
     const reset = () => {
       x.set(0);
       y.set(0);
@@ -49,4 +50,5 @@ export const MagneticButton = forwardRef<HTMLAnchorElement, Props>(
     );
   }
 );
+
 MagneticButton.displayName = "MagneticButton";

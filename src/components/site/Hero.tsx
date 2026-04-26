@@ -1,4 +1,5 @@
 import portrait from "@/assets/portrait.jpg";
+import { scrollToSection } from "@/lib/scroll-to-section";
 import { Bug, ShieldCheck, Activity, Terminal, Download } from "lucide-react";
 import { motion, useMotionValue, useSpring, useTransform, type Variants } from "framer-motion";
 import { MouseEvent } from "react";
@@ -7,7 +8,6 @@ import { MagneticButton } from "./MagneticButton";
 export const Hero = () => {
   const cvUrl = `${import.meta.env.BASE_URL}Md_Mijanur_Rahman_SQA_Engineer_CV.pdf`;
 
-  // Tilt portrait
   const mx = useMotionValue(0);
   const my = useMotionValue(0);
   const smx = useSpring(mx, { stiffness: 120, damping: 18 });
@@ -20,6 +20,7 @@ export const Hero = () => {
     mx.set((e.clientX - r.left) / r.width - 0.5);
     my.set((e.clientY - r.top) / r.height - 0.5);
   };
+
   const reset = () => {
     mx.set(0);
     my.set(0);
@@ -36,7 +37,6 @@ export const Hero = () => {
 
   return (
     <section id="top" className="relative overflow-hidden pt-32 pb-16 md:pt-40 md:pb-24">
-      {/* Background grid + glow */}
       <div className="pointer-events-none absolute inset-0 grid-bg opacity-60" />
       <motion.div
         className="pointer-events-none absolute -top-40 left-1/2 h-[420px] w-[820px] -translate-x-1/2 rounded-full bg-neon/15 blur-[120px]"
@@ -47,7 +47,6 @@ export const Hero = () => {
 
       <div className="relative mx-auto grid max-w-6xl grid-cols-1 gap-12 px-6 md:grid-cols-12 md:px-10">
         <div className="md:col-span-7">
-          {/* Status badge */}
           <motion.div
             variants={fadeUp}
             initial="hidden"
@@ -60,11 +59,10 @@ export const Hero = () => {
               <span className="relative inline-flex h-2 w-2 rounded-full bg-neon" />
             </span>
             <span className="font-mono text-text-dim">
-              <span className="text-neon">●</span> SQA Engineer · Dhaka, BD · Open to work
+              <span className="text-neon">â—</span> SQA Engineer Â· Dhaka, BD Â· Open to work
             </span>
           </motion.div>
 
-          {/* Terminal command line */}
           <motion.p variants={fadeUp} initial="hidden" animate="show" custom={1} className="mb-6 font-mono text-sm text-text-dim">
             <span className="text-neon">$</span> whoami<span className="caret text-neon">_</span>
           </motion.p>
@@ -88,11 +86,11 @@ export const Hero = () => {
             custom={3}
             className="mt-8 max-w-xl text-base sm:text-lg leading-relaxed text-text-dim"
           >
-            I'm <span className="text-text font-medium">Md Mijanur Rahman</span> — an SQA Engineer with{" "}
+            I'm <span className="text-text font-medium">Md Mijanur Rahman</span> â€” an SQA Engineer with{" "}
             <span className="text-text">3.5+ years</span> testing fintech web, mobile and API platforms.
             I write automation in <span className="text-neon">Selenium</span>,{" "}
             <span className="text-neon">Cucumber</span>, and{" "}
-            <span className="text-neon">JMeter</span> — and I ship quality with intent.
+            <span className="text-neon">JMeter</span> â€” and I ship quality with intent.
           </motion.p>
 
           <motion.div
@@ -104,11 +102,15 @@ export const Hero = () => {
           >
             <MagneticButton
               href="#projects"
+              onClick={(event) => {
+                event.preventDefault();
+                scrollToSection("projects");
+              }}
               className="group inline-flex items-center gap-3 rounded-md bg-neon px-5 sm:px-6 py-3.5 text-sm font-medium uppercase tracking-[0.14em] text-background shine transition-shadow hover:shadow-[0_0_30px_hsl(var(--neon)/0.6)]"
             >
               <Terminal className="h-4 w-4" />
               View my work
-              <span className="transition-transform group-hover:translate-x-1">→</span>
+              <span className="transition-transform group-hover:translate-x-1">â†’</span>
             </MagneticButton>
             <MagneticButton
               href={cvUrl}
@@ -121,13 +123,16 @@ export const Hero = () => {
             </MagneticButton>
             <a
               href="#contact"
+              onClick={(event) => {
+                event.preventDefault();
+                scrollToSection("contact");
+              }}
               className="inline-flex items-center gap-2 rounded-md px-2 py-3.5 text-sm font-medium uppercase tracking-[0.14em] text-text-dim underline-grow"
             >
-              Hire me →
+              Hire me â†’
             </a>
           </motion.div>
 
-          {/* Mini stats */}
           <motion.div
             variants={fadeUp}
             initial="hidden"
@@ -138,7 +143,7 @@ export const Hero = () => {
             {[
               { k: "3.5+", v: "Years exp." },
               { k: "2,000+", v: "Test cases" },
-              { k: "35%", v: "Defects ↓" },
+              { k: "35%", v: "Defects â†“" },
             ].map((s) => (
               <motion.div
                 key={s.v}
@@ -152,7 +157,6 @@ export const Hero = () => {
           </motion.div>
         </div>
 
-        {/* Portrait card */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -165,7 +169,6 @@ export const Hero = () => {
             style={{ rotateX, rotateY, transformPerspective: 1000 }}
             className="relative will-change-transform"
           >
-            {/* Floating tag — top */}
             <motion.div
               className="absolute -left-3 -top-3 z-10 hidden items-center gap-2 rounded-md surface px-3 py-1.5 font-mono text-[11px] text-neon md:inline-flex float-y"
             >
@@ -191,7 +194,6 @@ export const Hero = () => {
                 }}
               />
 
-              {/* Bottom HUD */}
               <div className="absolute inset-x-3 bottom-3 flex items-center justify-between rounded-md bg-background/70 px-3 py-2 backdrop-blur-md ring-1 ring-line">
                 <div className="flex items-center gap-2 font-mono text-[11px] text-text">
                   <span className="h-1.5 w-1.5 rounded-full bg-neon pulse-dot" />
@@ -201,10 +203,9 @@ export const Hero = () => {
               </div>
             </div>
 
-            {/* Floating tags */}
             <div className="absolute -right-3 top-12 hidden flex-col gap-2 md:flex">
-              <span className="rounded-md surface px-2.5 py-1 font-mono text-[10px] text-cyan float-y" style={{ animationDelay: "1s" }}>★ Star Player '24</span>
-              <span className="rounded-md surface px-2.5 py-1 font-mono text-[10px] text-magenta float-y" style={{ animationDelay: "2s" }}>IEEE · 3rd Best Paper</span>
+              <span className="rounded-md surface px-2.5 py-1 font-mono text-[10px] text-cyan float-y" style={{ animationDelay: "1s" }}>â˜… Star Player '24</span>
+              <span className="rounded-md surface px-2.5 py-1 font-mono text-[10px] text-magenta float-y" style={{ animationDelay: "2s" }}>IEEE Â· 3rd Best Paper</span>
             </div>
             <div className="absolute -bottom-3 -right-3 hidden items-center gap-2 rounded-md surface px-3 py-1.5 font-mono text-[11px] text-amber md:inline-flex float-y" style={{ animationDelay: "1.5s" }}>
               <Bug className="h-3.5 w-3.5" />
