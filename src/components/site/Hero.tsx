@@ -1,5 +1,6 @@
 import portrait from "@/assets/portrait.jpg";
-import { scrollToSection } from "@/lib/scroll-to-section";
+import { useSectionNavigation } from "@/hooks/use-section-navigation";
+import { getSectionHref } from "@/lib/section-routes";
 import { Bug, ShieldCheck, Activity, Terminal, Download } from "lucide-react";
 import { motion, useMotionValue, useSpring, useTransform, type Variants } from "framer-motion";
 import { MouseEvent } from "react";
@@ -7,6 +8,7 @@ import { MagneticButton } from "./MagneticButton";
 
 export const Hero = () => {
   const cvUrl = `${import.meta.env.BASE_URL}Md_Mijanur_Rahman_SQA_Engineer_CV.pdf`;
+  const navigateToSection = useSectionNavigation();
 
   const mx = useMotionValue(0);
   const my = useMotionValue(0);
@@ -59,7 +61,7 @@ export const Hero = () => {
               <span className="relative inline-flex h-2 w-2 rounded-full bg-neon" />
             </span>
             <span className="font-mono text-text-dim">
-              <span className="text-neon">â—</span> SQA Engineer Â· Dhaka, BD Â· Open to work
+              <span className="text-neon">*</span> SQA Engineer · Dhaka, BD · Open to work
             </span>
           </motion.div>
 
@@ -86,11 +88,11 @@ export const Hero = () => {
             custom={3}
             className="mt-8 max-w-xl text-base sm:text-lg leading-relaxed text-text-dim"
           >
-            I'm <span className="text-text font-medium">Md Mijanur Rahman</span> â€” an SQA Engineer with{" "}
+            I'm <span className="text-text font-medium">Md Mijanur Rahman</span> - an SQA Engineer with{" "}
             <span className="text-text">3.5+ years</span> testing fintech web, mobile and API platforms.
             I write automation in <span className="text-neon">Selenium</span>,{" "}
             <span className="text-neon">Cucumber</span>, and{" "}
-            <span className="text-neon">JMeter</span> â€” and I ship quality with intent.
+            <span className="text-neon">JMeter</span> - and I ship quality with intent.
           </motion.p>
 
           <motion.div
@@ -101,35 +103,35 @@ export const Hero = () => {
             className="mt-10 flex flex-wrap items-center gap-3 sm:gap-4"
           >
             <MagneticButton
-              href="#projects"
+              href={getSectionHref("projects")}
               onClick={(event) => {
                 event.preventDefault();
-                scrollToSection("projects");
+                navigateToSection("projects");
               }}
-              className="group inline-flex items-center gap-3 rounded-md bg-neon px-5 sm:px-6 py-3.5 text-sm font-medium uppercase tracking-[0.14em] text-background shine transition-shadow hover:shadow-[0_0_30px_hsl(var(--neon)/0.6)]"
+              className="group inline-flex items-center gap-3 rounded-md bg-neon px-5 py-3.5 text-sm font-medium uppercase tracking-[0.14em] text-background shine transition-shadow hover:shadow-[0_0_30px_hsl(var(--neon)/0.6)] sm:px-6"
             >
               <Terminal className="h-4 w-4" />
               View my work
-              <span className="transition-transform group-hover:translate-x-1">â†’</span>
+              <span className="transition-transform group-hover:translate-x-1">{">"}</span>
             </MagneticButton>
             <MagneticButton
               href={cvUrl}
               download="Md_Mijanur_Rahman_SQA_Engineer_CV.pdf"
               ariaLabel="Download CV"
-              className="group inline-flex items-center gap-2 rounded-md border hairline-bright px-5 sm:px-6 py-3.5 text-sm font-medium uppercase tracking-[0.14em] text-text hover:border-neon/60 hover:text-neon"
+              className="group inline-flex items-center gap-2 rounded-md border hairline-bright px-5 py-3.5 text-sm font-medium uppercase tracking-[0.14em] text-text hover:border-neon/60 hover:text-neon sm:px-6"
             >
               <Download className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-y-0.5" />
               Download CV
             </MagneticButton>
             <a
-              href="#contact"
+              href={getSectionHref("contact")}
               onClick={(event) => {
                 event.preventDefault();
-                scrollToSection("contact");
+                navigateToSection("contact");
               }}
               className="inline-flex items-center gap-2 rounded-md px-2 py-3.5 text-sm font-medium uppercase tracking-[0.14em] text-text-dim underline-grow"
             >
-              Hire me â†’
+              Hire me {" >"}
             </a>
           </motion.div>
 
@@ -143,15 +145,15 @@ export const Hero = () => {
             {[
               { k: "3.5+", v: "Years exp." },
               { k: "2,000+", v: "Test cases" },
-              { k: "35%", v: "Defects â†“" },
+              { k: "35%", v: "Defects down" },
             ].map((s) => (
               <motion.div
                 key={s.v}
                 whileHover={{ y: -3 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
-                <p className="font-display text-2xl sm:text-3xl font-semibold text-text md:text-4xl">{s.k}</p>
-                <p className="mt-1 font-mono text-[10px] sm:text-[11px] uppercase tracking-[0.16em] text-text-dim">{s.v}</p>
+                <p className="font-display text-2xl font-semibold text-text sm:text-3xl md:text-4xl">{s.k}</p>
+                <p className="mt-1 font-mono text-[10px] uppercase tracking-[0.16em] text-text-dim sm:text-[11px]">{s.v}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -204,8 +206,8 @@ export const Hero = () => {
             </div>
 
             <div className="absolute -right-3 top-12 hidden flex-col gap-2 md:flex">
-              <span className="rounded-md surface px-2.5 py-1 font-mono text-[10px] text-cyan float-y" style={{ animationDelay: "1s" }}>â˜… Star Player '24</span>
-              <span className="rounded-md surface px-2.5 py-1 font-mono text-[10px] text-magenta float-y" style={{ animationDelay: "2s" }}>IEEE Â· 3rd Best Paper</span>
+              <span className="rounded-md surface px-2.5 py-1 font-mono text-[10px] text-cyan float-y" style={{ animationDelay: "1s" }}>* Star Player '24</span>
+              <span className="rounded-md surface px-2.5 py-1 font-mono text-[10px] text-magenta float-y" style={{ animationDelay: "2s" }}>IEEE · 3rd Best Paper</span>
             </div>
             <div className="absolute -bottom-3 -right-3 hidden items-center gap-2 rounded-md surface px-3 py-1.5 font-mono text-[11px] text-amber md:inline-flex float-y" style={{ animationDelay: "1.5s" }}>
               <Bug className="h-3.5 w-3.5" />

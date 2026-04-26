@@ -3,7 +3,7 @@ import { useEffect } from "react";
 
 const NotFound = () => {
   const location = useLocation();
-  const homeUrl = `${import.meta.env.BASE_URL}#/`;
+  const homeUrl = import.meta.env.BASE_URL;
 
   useEffect(() => {
     console.error("404 Error: User attempted to access non-existent route:", location.pathname);

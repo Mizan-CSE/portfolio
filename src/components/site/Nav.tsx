@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { scrollToSection } from "@/lib/scroll-to-section";
+import { useSectionNavigation } from "@/hooks/use-section-navigation";
 import { Logo } from "./Logo";
 
 const links = [
@@ -15,6 +15,7 @@ const links = [
 export const Nav = () => {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const navigateToSection = useSectionNavigation();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -37,7 +38,7 @@ export const Nav = () => {
             <li key={link.id}>
               <button
                 type="button"
-                onClick={() => scrollToSection(link.id)}
+                onClick={() => navigateToSection(link.id)}
                 className="group relative inline-flex items-center gap-2 rounded-md px-3 py-2 text-sm text-text-dim transition-colors hover:text-text"
               >
                 <span className="font-mono text-[10px] text-neon/70">{link.n}</span>
@@ -50,7 +51,7 @@ export const Nav = () => {
 
         <button
           type="button"
-          onClick={() => scrollToSection("contact")}
+          onClick={() => navigateToSection("contact")}
           className="hidden items-center gap-2 rounded-md border border-neon/40 bg-neon/10 px-4 py-2 text-xs font-medium uppercase tracking-[0.16em] text-neon transition-all hover:bg-neon hover:text-background hover:shadow-[0_0_24px_hsl(var(--neon)/0.6)] md:inline-flex"
         >
           <span className="h-1.5 w-1.5 rounded-full bg-neon pulse-dot" />
@@ -78,7 +79,7 @@ export const Nav = () => {
                   type="button"
                   onClick={() => {
                     setOpen(false);
-                    scrollToSection(link.id);
+                    navigateToSection(link.id);
                   }}
                   className="flex items-center gap-3 py-3 text-text"
                 >

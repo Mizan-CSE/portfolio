@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Redirecting...</title>
+    <script>
+      (function () {
+        var location = window.location;
+        var baseSegments = 1;
+        var pathnameParts = location.pathname.split("/");
+        var basePath = pathnameParts.slice(0, baseSegments + 1).join("/");
+        var routePath = pathnameParts.slice(baseSegments + 1).join("/");
+        var query = location.search ? "&" + location.search.slice(1).replace(/&/g, "~and~") : "";
+        var redirectUrl = basePath + "/?/" + routePath.replace(/&/g, "~and~") + query + location.hash;
+
+        location.replace(redirectUrl);
+      })();
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,13 +1,13 @@
-export const scrollToSection = (id: string) => {
+type ScrollToSectionOptions = {
+  behavior?: ScrollBehavior;
+};
+
+export const scrollToSection = (id: string, options: ScrollToSectionOptions = {}) => {
   const element = document.getElementById(id);
 
   if (!element) {
     return;
   }
 
-  element.scrollIntoView({ behavior: "smooth", block: "start" });
-
-  if (window.location.hash) {
-    window.history.replaceState(null, "", `${window.location.pathname}${window.location.search}`);
-  }
+  element.scrollIntoView({ behavior: options.behavior ?? "smooth", block: "start" });
 };

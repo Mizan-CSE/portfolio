@@ -1,10 +1,12 @@
-import { scrollToSection } from "@/lib/scroll-to-section";
+import { useSectionNavigation } from "@/hooks/use-section-navigation";
 
 export const Logo = ({ className = "" }: { className?: string }) => {
+  const navigateToSection = useSectionNavigation();
+
   return (
     <button
       type="button"
-      onClick={() => scrollToSection("top")}
+      onClick={() => navigateToSection("top")}
       className={`group inline-flex items-center gap-2.5 ${className}`}
       aria-label="Mijanur Rahman home"
     >
