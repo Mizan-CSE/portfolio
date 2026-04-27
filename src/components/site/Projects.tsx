@@ -39,7 +39,7 @@ const projects = [
     kind: "Research · Deep Learning",
     icon: FlaskConical,
     accent: "text-magenta",
-    desc: "Co-authored research on real-time anomaly detection from surveillance cameras using deep neural networks. Awarded 3rd Best Paper at the IEEE International Conference on Sustainable Technologies for Industry 4.0.",
+    desc: "Author research on real-time anomaly detection from surveillance cameras using deep neural networks. Awarded 3rd Best Paper at the IEEE International Conference on Sustainable Technologies for Industry 4.0.",
     metrics: [
       { k: "3rd", v: "Best paper" },
       { k: "IEEE", v: "Published" },

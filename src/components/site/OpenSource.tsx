@@ -16,7 +16,7 @@ const repos = [
     desc: "End-to-end web automation suite for an e-commerce platform — page objects, data-driven tests and HTML reporting.",
     lang: "HTML",
     langColor: "bg-magenta",
-    tags: ["Selenium", "POM", "Cucumber"],
+    tags: ["Selenium", "TestNG", "POM"],
     href: "https://github.com/Mizan-CSE/Monarch_Mart",
     updated: "Oct 2023",
   },

@@ -4,15 +4,15 @@ import { motion } from "framer-motion";
 const publications = [
   {
     title:
-      "Detection of Online Fake News Using Optimized Ensemble Deep Learning Models",
-    venue: "IEEE Xplore · ICCIT 2021",
-    role: "Co-author",
+      "Real-Time Anomaly Detection and Classification from Surveillance Cameras Using Deep Neural Network",
+    venue: "Green University of Bangladesh",
+    role: "Author",
     award: "3rd Best Paper Award",
     year: "2022",
     abstract:
-      "Proposed an optimized ensemble deep-learning approach combining LSTM, GRU and CNN for detecting fake news with improved precision/recall over baseline models.",
+      "IEEE-published research on AI-powered surveillance anomaly detection using deep learning, introducing a real-world dataset of 10,483 images across 14 anomaly categories with 79.69% classification accuracy.",
     href: "https://ieeexplore.ieee.org/document/9732584",
-    tags: ["Deep Learning", "NLP", "Ensemble Models", "IEEE"],
+    tags: ["Deep Neural Network", "Real-time Anomaly Detection", "Solid modeling", "IEEE"],
   },
 ];
 
