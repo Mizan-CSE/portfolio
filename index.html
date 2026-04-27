@@ -1,54 +1,45 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script>
-      (function (location) {
-        if (!location.search.startsWith("?/")) {
-          return;
-        }
 
-        const decoded = location.search.slice(2).replace(/~and~/g, "&");
-        const [path, query = ""] = decoded.split("&");
-        const nextUrl = `${location.pathname}${path}${query ? `?${query}` : ""}${location.hash}`;
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        window.history.replaceState(null, "", nextUrl);
-      })(window.location);
-    </script>
-    <title>Md Mijanur Rahman - SQA Engineer</title>
-    <meta
-      name="description"
-      content="Md Mijanur Rahman - SQA Engineer with 3.5+ years testing fintech web, mobile, and API applications. Selenium, Cucumber, JMeter, Postman."
-    />
-    <meta name="author" content="Md Mijanur Rahman" />
+  <script>
+    (function (location) {
+      if (!location.search.startsWith("?/")) return;
+      const decoded = location.search.slice(2).replace(/~and~/g, "&");
+      const [path, query = ""] = decoded.split("&");
+      const nextUrl = `${location.pathname}${path}${query ? `?${query}` : ""}${location.hash}`;
+      window.history.replaceState(null, "", nextUrl);
+    })(window.location);
+  </script>
 
-    <meta property="og:type" content="website" />
-    <meta
-      property="og:image"
-      content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/0ac18734-d076-44fc-bcc9-a735b5bd2746/id-preview-ba0b4588--bf9b3971-8024-4400-8d97-283de4005132.lovable.app-1776845204138.png"
-    />
+  <title>Md Mijanur Rahman - SQA Engineer</title>
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@Lovable" />
-    <meta
-      name="twitter:image"
-      content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/0ac18734-d076-44fc-bcc9-a735b5bd2746/id-preview-ba0b4588--bf9b3971-8024-4400-8d97-283de4005132.lovable.app-1776845204138.png"
-    />
-    <meta property="og:title" content="Md Mijanur Rahman - SQA Engineer" />
-    <meta name="twitter:title" content="Md Mijanur Rahman - SQA Engineer" />
-    <meta
-      property="og:description"
-      content="Md Mijanur Rahman - SQA Engineer with 3.5+ years testing fintech web, mobile, and API applications. Selenium, Cucumber, JMeter, Postman."
-    />
-    <meta
-      name="twitter:description"
-      content="Md Mijanur Rahman - SQA Engineer with 3.5+ years testing fintech web, mobile, and API applications. Selenium, Cucumber, JMeter, Postman."
-    />
-  </head>
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+  <!-- Google SEO -->
+  <meta name="description"
+    content="Md Mijanur Rahman is an SQA Engineer with 3.5+ years of experience testing fintech web, mobile, and API applications using Selenium, Cucumber, JMeter, and Postman." />
+  <meta name="author" content="Md Mijanur Rahman" />
+  <meta name="robots" content="index, follow" />
+  <meta name="keywords"
+    content="SQA Engineer, Software QA, Selenium, Cucumber, JMeter, Postman, Fintech Testing, Md Mijanur Rahman" />
+
+  <!-- Open Graph (for LinkedIn, Facebook sharing) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Md Mijanur Rahman - SQA Engineer" />
+  <meta property="og:description"
+    content="SQA Engineer with 3.5+ years testing fintech web, mobile, and API applications." />
+  <meta property="og:url" content="https://mizan-cse.github.io/portfolio/" />
+  <meta property="og:image" content="https://mizan-cse.github.io/portfolio/og-image.png" />
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+
 </html>
