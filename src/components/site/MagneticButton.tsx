@@ -1,18 +1,15 @@
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { AnchorHTMLAttributes, forwardRef, MouseEvent, ReactNode } from "react";
 
-type Props = {
-  href?: string;
-  download?: boolean | string;
+type Props = AnchorHTMLAttributes<HTMLAnchorElement> & {
   className?: string;
   children: ReactNode;
   strength?: number;
-  onClick?: AnchorHTMLAttributes<HTMLAnchorElement>["onClick"];
   ariaLabel?: string;
 };
 
 export const MagneticButton = forwardRef<HTMLAnchorElement, Props>(
-  ({ href, download, className = "", children, strength = 14, onClick, ariaLabel }, ref) => {
+  ({ className = "", children, strength = 14, ariaLabel, ...anchorProps }, ref) => {
     const x = useMotionValue(0);
     const y = useMotionValue(0);
     const sx = useSpring(x, { stiffness: 200, damping: 15 });
@@ -36,11 +33,9 @@ export const MagneticButton = forwardRef<HTMLAnchorElement, Props>(
     return (
       <motion.a
         ref={ref}
-        href={href}
-        download={download as any}
+        {...anchorProps}
         onMouseMove={handleMove}
         onMouseLeave={reset}
-        onClick={onClick}
         aria-label={ariaLabel}
         style={{ x: sx, y: sy, rotateX: rx, rotateY: ry, transformPerspective: 600 }}
         className={className}

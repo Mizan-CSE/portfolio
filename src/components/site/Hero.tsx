@@ -1,7 +1,7 @@
 import portrait from "@/assets/portrait.jpg";
 import { useSectionNavigation } from "@/hooks/use-section-navigation";
 import { getSectionHref } from "@/lib/section-routes";
-import { Bug, ShieldCheck, Activity, Terminal, Download } from "lucide-react";
+import { Bug, ShieldCheck, Activity, Terminal } from "lucide-react";
 import { motion, useMotionValue, useSpring, useTransform, type Variants } from "framer-motion";
 import { MouseEvent } from "react";
 import { MagneticButton } from "./MagneticButton";
@@ -116,12 +116,12 @@ export const Hero = () => {
             </MagneticButton>
             <MagneticButton
               href={cvUrl}
-              download="Md_Mijanur_Rahman_SQA_Engineer_CV.pdf"
-              ariaLabel="Download CV"
-              className="group inline-flex items-center gap-2 rounded-md border hairline-bright px-5 py-3.5 text-sm font-medium uppercase tracking-[0.14em] text-text hover:border-neon/60 hover:text-neon sm:px-6"
+              target="_blank"
+              rel="noopener noreferrer"
+              ariaLabel="Resume"
+              className="group inline-flex items-center rounded-md border hairline-bright px-5 py-3.5 text-sm font-medium uppercase tracking-[0.14em] text-text hover:border-neon/60 hover:text-neon sm:px-6"
             >
-              <Download className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-y-0.5" />
-              Download CV
+              Resume
             </MagneticButton>
             <a
               href={getSectionHref("contact")}
