@@ -20,7 +20,7 @@ const groups = [
     icon: Bot,
     title: "Automation",
     color: "text-cyan",
-    items: ["Selenium WebDriver", "Cucumber (BDD)", "Appium", "TestNG", "JUnit", "POM Pattern", "REST Assured"],
+    items: ["Selenium WebDriver", "Cucumber (BDD)", "Appium", "TestNG", "JUnit", "POM Pattern", "Playwright (learning)"],
   },
   {
     icon: Network,
@@ -54,9 +54,9 @@ const groups = [
   },
   {
     icon: Workflow,
-    title: "Methodology",
+    title: "AI & Methodology",
     color: "text-magenta",
-    items: ["Agile / Scrum", "Test Strategy", "Defect Lifecycle", "Risk-based Testing", "Release Validation"],
+    items: ["Agile / Scrum", "ChatGPT / Claude", "GitHub Copilot", "AI-assisted test design", "Test strategy", "Release validation"],
   },
 ];
 

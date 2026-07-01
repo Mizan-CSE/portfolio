@@ -12,8 +12,8 @@ const projects = [
     desc: "End-to-end functional, regression & integration testing for a microfinance platform serving 350+ MFIs. Built scalable Selenium + Cucumber regression suites; validated APIs, SQL transactions, and critical financial workflows.",
     metrics: [
       { k: "350+", v: "MFIs" },
-      { k: "40%", v: "Coverage ↑" },
-      { k: "2k+", v: "Test cases" },
+      { k: "45%", v: "Coverage ↑" },
+      { k: "35%", v: "Defects ↓" },
     ],
     stack: ["Selenium", "Cucumber", "Java", "Postman", "JMeter", "SQL"],
   },
@@ -24,13 +24,13 @@ const projects = [
     kind: "Migration Automation",
     icon: Cog,
     accent: "text-cyan",
-    desc: "Designed a Python + Selenium migration tool that compressed branch onboarding from 80 hours to 7 hours — a 90% reduction — while improving accuracy and accelerating rollout timelines.",
+    desc: "Self-initiated data migration automation system — Spring Boot backend, HTML/CSS/JS frontend, Selenium automation, and Python scripts for preprocessing & validation. Compressed branch onboarding from 80h to 7h (90%+ reduction) with improved accuracy.",
     metrics: [
-      { k: "90%", v: "Time saved" },
+      { k: "90%+", v: "Time saved" },
       { k: "80→7h", v: "Per branch" },
       { k: "0", v: "Data loss" },
     ],
-    stack: ["Python", "Selenium", "Pandas", "Automation"],
+    stack: ["Spring Boot", "Java", "Selenium", "Python", "HTML/CSS/JS"],
   },
   {
     no: "03",
@@ -39,7 +39,7 @@ const projects = [
     kind: "Research · Deep Learning",
     icon: FlaskConical,
     accent: "text-magenta",
-    desc: "Author research on real-time anomaly detection from surveillance cameras using deep neural networks. Awarded 3rd Best Paper at the IEEE International Conference on Sustainable Technologies for Industry 4.0.",
+    desc: "Co-authored research on real-time anomaly detection from surveillance cameras using deep neural networks. Awarded 3rd Best Paper at the IEEE International Conference on Sustainable Technologies for Industry 4.0.",
     metrics: [
       { k: "3rd", v: "Best paper" },
       { k: "IEEE", v: "Published" },

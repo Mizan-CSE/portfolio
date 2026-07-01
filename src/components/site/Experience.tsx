@@ -4,20 +4,21 @@ import { motion } from "framer-motion";
 const milestones = [
   {
     period: "Sept 2022 — Present",
-    role: "SQA Engineer",
-    company: "DataSoft Systems Bangladesh Ltd.",
+    role: "QA Engineer",
+    company: "DataSoft System Bangladesh Limited",
     companyUrl: "https://datasoft-bd.com/",
     companyLogo: "https://www.google.com/s2/favicons?sz=128&domain=datasoft-bd.com",
     location: "Dhaka, BD",
     type: "Full-time",
     bullets: [
-      "Designed & maintained 2,000+ test cases — lifting regression coverage by 40% across web and mobile.",
-      "Built automation frameworks with Selenium WebDriver, Cucumber (BDD), JUnit using POM design pattern.",
+      "Designed & maintained test automation frameworks with Selenium WebDriver, Java, Cucumber BDD, JUnit/TestNG and POM — lifting regression coverage by 45% across web and mobile.",
+      "Executed functional, regression, integration, smoke, sanity, cross-browser and mobile testing aligned to STLC and defect lifecycle management.",
       "Ran API validation (Postman/Newman), SQL backend checks, JMeter load tests, and Burp Suite security audits.",
       "Reduced production defects by 35% and earned Star Player award in 2024.",
-      "Mentored junior QAs, drove automation adoption, and contributed to QA process improvements.",
+      "Leveraged AI tools (ChatGPT, Claude, GitHub Copilot) for test case generation, synthetic data, and defect analysis.",
+      "Mentored junior QAs and drove automation adoption within the QA team.",
     ],
-    tech: ["Selenium", "Cucumber", "JMeter", "Postman", "Jenkins", "Java", "SQL"],
+    tech: ["Selenium", "Cucumber", "JMeter", "Postman", "Jenkins", "Java", "Python", "SQL"],
   },
 ];
 

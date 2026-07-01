@@ -1,8 +1,8 @@
 import { MapPin, Briefcase, Award, GraduationCap } from "lucide-react";
 
 const meta = [
-  { icon: MapPin, label: "Based in", value: "Mirpur, Dhaka, BD" },
-  { icon: Briefcase, label: "Role", value: "SQA Engineer" },
+  { icon: MapPin, label: "Based in", value: "Dhaka, BD" },
+  { icon: Briefcase, label: "Role", value: "QA Engineer" },
   { icon: Award, label: "Recognition", value: "Star Player '24" },
   { icon: GraduationCap, label: "Education", value: "BSc CSE, GUB" },
 ];
@@ -22,14 +22,14 @@ export const About = () => {
           </h2>
 
           <p className="mt-8 text-base leading-relaxed text-text-dim">
-            I'm an SQA Engineer who treats testing as engineering. Over the last 3.5+ years
-            I've shipped quality across enterprise microfinance — designing test strategies,
-            writing automation that scales, and finding the edge cases everyone missed.
+            I'm a QA Engineer who treats testing as engineering. Over the last 4 years
+            I've shipped quality across enterprise fintech — designing test strategies,
+            building automation frameworks that scale, and finding the edge cases everyone missed.
           </p>
           <p className="mt-4 text-base leading-relaxed text-text-dim">
             I move fluently between manual exploratory testing, BDD automation, API
-            validation, performance load tests, and security audits. I document well,
-            mentor juniors, and speak fluent developer.
+            validation, performance load tests, and security audits — and I lean on
+            modern AI tooling to accelerate test design, data generation, and defect analysis.
           </p>
         </div>
 
@@ -46,10 +46,10 @@ export const About = () => {
               <span className="font-mono text-[11px] text-neon">● live</span>
             </div>
             <pre className="overflow-x-auto px-5 py-5 font-mono text-[13px] leading-relaxed text-text-dim">
-{`{
+              {`{
   "`}<span className="text-cyan">name</span>{`": "`}<span className="text-text">Md Mijanur Rahman</span>{`",
-  "`}<span className="text-cyan">role</span>{`": "`}<span className="text-text">SQA Engineer</span>{`",
-  "`}<span className="text-cyan">experience_years</span>{`": `}<span className="text-amber">3.5</span>{`,
+  "`}<span className="text-cyan">role</span>{`": "`}<span className="text-text">QA Engineer</span>{`",
+  "`}<span className="text-cyan">experience_years</span>{`": `}<span className="text-amber">4</span>{`,
   "`}<span className="text-cyan">domains</span>{`": [`}<span className="text-magenta">"fintech"</span>{`, `}<span className="text-magenta">"microfinance"</span>{`, `}<span className="text-magenta">"enterprise"</span>{`],
   "`}<span className="text-cyan">testing</span>{`": {
     "`}<span className="text-cyan">manual</span>{`":     [`}<span className="text-magenta">"functional"</span>{`, `}<span className="text-magenta">"regression"</span>{`, `}<span className="text-magenta">"UAT"</span>{`, `}<span className="text-magenta">"exploratory"</span>{`],

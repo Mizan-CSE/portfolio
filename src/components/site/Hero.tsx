@@ -7,7 +7,7 @@ import { MouseEvent } from "react";
 import { MagneticButton } from "./MagneticButton";
 
 export const Hero = () => {
-  const cvUrl = `${import.meta.env.BASE_URL}Md_Mijanur_Rahman_SQA_Engineer_CV.pdf`;
+  const cvUrl = `${import.meta.env.BASE_URL}Md_Mijanur_Rahman_QA_Engineer.pdf`;
   const navigateToSection = useSectionNavigation();
 
   const mx = useMotionValue(0);
@@ -61,7 +61,7 @@ export const Hero = () => {
               <span className="relative inline-flex h-2 w-2 rounded-full bg-neon" />
             </span>
             <span className="font-mono text-text-dim">
-              <span className="text-neon">*</span> SQA Engineer · Dhaka, BD · Open to work
+              <span className="text-neon"></span>QA Engineer · Dhaka, BD · Open to work
             </span>
           </motion.div>
 
@@ -89,8 +89,8 @@ export const Hero = () => {
             className="mt-8 max-w-xl text-base sm:text-lg leading-relaxed text-text-dim"
           >
             I'm <span className="text-text font-medium">Md Mijanur Rahman</span> - an SQA Engineer with{" "}
-            <span className="text-text">3.5+ years</span> testing fintech web, mobile and API platforms.
-            I write automation in <span className="text-neon">Selenium</span>,{" "}
+            <span className="text-text">4 years</span> testing fintech web, mobile and API platforms.
+            I write automation in <span className="text-neon">Selenium WebDriver</span>,{" "}
             <span className="text-neon">Cucumber</span>, and{" "}
             <span className="text-neon">JMeter</span> - and I ship quality with intent.
           </motion.p>
@@ -143,9 +143,9 @@ export const Hero = () => {
             className="mt-14 grid grid-cols-3 gap-4 border-t hairline pt-6"
           >
             {[
-              { k: "3.5+", v: "Years exp." },
-              { k: "2,000+", v: "Test cases" },
-              { k: "35%", v: "Defects down" },
+              { k: "4", v: "Years exp." },
+              { k: "45%", v: "Coverage ↑" },
+              { k: "35%", v: "Defects ↓" },
             ].map((s) => (
               <motion.div
                 key={s.v}
@@ -181,7 +181,7 @@ export const Hero = () => {
             <div className="relative aspect-[4/5] overflow-hidden rounded-xl glow-card scanline">
               <img
                 src={portrait}
-                alt="Md Mijanur Rahman, SQA Engineer"
+                alt="Md Mijanur Rahman, QA Engineer"
                 width={1024}
                 height={1280}
                 className="h-full w-full object-cover object-top opacity-95 transition-transform duration-700 hover:scale-[1.04]"

@@ -6,12 +6,14 @@ const items = [
   "Appium",
   "TestNG",
   "JUnit",
+  "Playwright",
   "Burp Suite",
   "Jenkins CI",
   "Java",
   "Python",
   "SQL",
   "REST APIs",
+  "GitHub Copilot",
   "Agile / Scrum",
 ];
 
